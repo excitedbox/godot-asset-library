@@ -81,7 +81,7 @@
                 <div class="media-left">
                     <a href="<?php echo raw($basepath) . '/asset/' . url($asset['asset_id']) ?>" class="img-thumbnail">
                         <img class="media-object" src="<?php echo esc($asset['icon_url']) ?>" alt="<?php echo esc($asset['title']) ?>'s icon" width=80 height=80>
-                    </a>
+                   </a>
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">
@@ -103,6 +103,7 @@
                     </h4>
 
                     <p class="text-muted">
+                        <small><?php echo esc(substr($asset['description']), 0, 255)) ?></small>
                         Submitted by user <a href="?user=<?php echo esc($asset['author']) ?>" title="Search assets by '<?php echo esc($asset['author']) ?>'"><?php echo esc($asset['author']) ?></a>;
                         <a href="?<?php echo esc(http_build_query([
                             'filter' => $asset['cost'] // isset($params['filter']) ? $params['filter'] . ' ' . $asset['cost'] : $asset['cost']
